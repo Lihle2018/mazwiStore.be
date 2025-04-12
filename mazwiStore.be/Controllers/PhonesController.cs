@@ -60,6 +60,14 @@ namespace mazwiStore.be.Controllers
             var result = await _phoneRepository.UpdateAsync(id, request);
             return Ok(result);
         }
+
+        [HttpPut("AddPromotion/{id}")]
+        public async Task<IActionResult> AddPromotion(string id,[FromBody] Promotion request)
+        {
+            var result = await _phoneRepository.AddPromotion(id, request);
+            return Ok(result);
+        }
+
         [HttpDelete("Delete/{id}")]
         public async Task<IActionResult> DeletePhone(string id)
         {
